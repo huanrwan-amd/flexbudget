@@ -112,6 +112,8 @@ Measured on **one AMD Instinct MI300X**, ROCm 7.2.1, torch 2.10.
 | 3.21–3.78× | decode throughput vs dense at 8K / 16K / 32K |
 | 0.26–0.29× | time to first token vs dense, block-sparse prefill |
 | 15/16 vs 0/16 | at a 50% budget: scored working set vs a fixed sink+window baseline |
+| ~2.1× | faster block-sparse attention at a 25% budget (wall clock ratio 0.4764) |
+| < 0.016 | max deviation from dense causal at full budget, all three head-dim legs, against an independent `torch` SDPA reference (tolerance 0.05) |
 
 **Read the memory number carefully.** 71–74% is how much of the cache *one
 query touches*. It is not a smaller allocation — `peak_alloc_ratio = 1.00` and
