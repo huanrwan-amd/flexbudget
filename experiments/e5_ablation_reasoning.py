@@ -28,8 +28,8 @@ what does the anchor set / block size / reasoning load do to working-set accurac
 kernel quality.
 
 PILOT: samples=16 (ablation) / 16 (reasoning), seed=42, timeout 600s. Records raw (k,N) for
-every leg + a numeric value-norm concentration score. Writes exp/results/full/
-e5_ablation_reasoning.json + exp/results/pilots/. Defensive: every leg wrapped; DONE always
+every leg + a numeric value-norm concentration score. Writes results/
+e5_ablation_reasoning.json + results/. Defensive: every leg wrapped; DONE always
 emitted. SEQ_LEN kept modest for the pilot (2048) to fit the pilot budget; FULL mode uses 8K.
 """
 
@@ -45,7 +45,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_6_e5_ablation_reasoning")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 PILOT_DIR = RESULTS_DIR / "pilots"
 for d in (RESULTS_DIR, FULL_DIR, PILOT_DIR):

@@ -22,7 +22,7 @@ Design for correctness + speed (PILOT: 16 samples, seed 42, 8K ctx):
     essay-like sentences; the model is asked to return the value verbatim. Scoring is
     substring match of the ground-truth value in the greedy-decoded answer.
 
-Writes exp/results/full/e1_budget_knee.json + PID/PROGRESS/DONE markers.
+Writes results/e1_budget_knee.json + PID/PROGRESS/DONE markers.
 Defensive: any (model,method,budget) cell that raises is recorded and skipped; a
 DONE marker is always emitted so the monitor never hangs.
 """
@@ -39,7 +39,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_2_e1_budget_knee")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 FULL_DIR.mkdir(parents=True, exist_ok=True)

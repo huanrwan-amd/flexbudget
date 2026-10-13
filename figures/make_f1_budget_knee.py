@@ -6,7 +6,7 @@ estimated, smoothed or interpolated. Wilson 95% CIs are recomputed here from the
 raw (k, N) counts -- CI fields written by earlier agents are deliberately ignored.
 
 Run:
-  .venv/bin/python3 writing/figures/make_f1_budget_knee.py
+  python3 figures/make_f1_budget_knee.py
 from the workspace root (or anywhere -- paths are resolved from __file__).
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 # ---------------------------------------------------------------- paths
-HERE = Path(__file__).resolve().parent          # writing/figures
+HERE = Path(__file__).resolve().parent          # figures/
 ROOT = HERE.parent                               # repository root
 E1 = ROOT / "results" / "e1_budget_knee.json"
 E5 = ROOT / "results" / "e5_ablation_reasoning.json"
@@ -104,7 +104,7 @@ def main() -> None:
         prov.append({
             "series": f"dense ceiling ({mk})",
             "x_budget_pct": 100.0,
-            "json_file": "exp/results/full/e1_budget_knee.json",
+            "json_file": "results/e1_budget_knee.json",
             "json_path": f"models.{mk}.cells.dense@1.0",
             "raw_k": cell["k"], "raw_n": cell["N"],
             "value": cell["k"] / cell["N"],
@@ -129,7 +129,7 @@ def main() -> None:
             prov.append({
                 "series": label,
                 "x_budget_pct": 100.0 * b,
-                "json_file": "exp/results/full/e1_budget_knee.json",
+                "json_file": "results/e1_budget_knee.json",
                 "json_path": f"models.{model}.cells.{method}@{b}",
                 "raw_k": k, "raw_n": n,
                 "value": v,
@@ -201,7 +201,7 @@ def main() -> None:
         prov.append({
             "series": "inset: mean block skip rate vs block size",
             "x_block_size": bs,
-            "json_file": "exp/results/full/e5_ablation_reasoning.json",
+            "json_file": "results/e5_ablation_reasoning.json",
             "json_path": f"ablation[leg={key}].mean_block_skip_rate",
             "raw_k": row["k"], "raw_n": row["n"],
             "note": "raw_k/raw_n are the NIAH accuracy counts for this leg; "
@@ -259,7 +259,7 @@ def main() -> None:
 
     OUT_PROV.write_text(json.dumps({
         "figure": "F1 -- NIAH accuracy vs KV budget knee-curve",
-        "generated_by": "writing/figures/make_f1_budget_knee.py",
+        "generated_by": "figures/make_f1_budget_knee.py",
         "PILOT_SCALE_WARNING": (
             "All data is PILOT scale (e1 mode='PILOT', e5 mode='PILOT'): n=16 samples "
             "per cell, single seed (42), two small Qwen2.5 models, 8192-token context. "
@@ -267,11 +267,11 @@ def main() -> None:
             "Do not present these as converged results."
         ),
         "sources": {
-            "e1": {"path": "exp/results/full/e1_budget_knee.json",
+            "e1": {"path": "results/e1_budget_knee.json",
                    "mode": e1["mode"], "seed": e1["seed"],
                    "elapsed_sec": e1["elapsed_sec"],
                    "real_inference": e1["elapsed_sec"] > 1.0},
-            "e5": {"path": "exp/results/full/e5_ablation_reasoning.json",
+            "e5": {"path": "results/e5_ablation_reasoning.json",
                    "mode": e5["mode"], "seed": e5["seed"],
                    "elapsed_sec": e5["elapsed_sec"],
                    "real_inference": e5["elapsed_sec"] > 1.0},

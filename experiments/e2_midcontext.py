@@ -32,7 +32,7 @@ Design notes
   (model x condition x depth) for Wilson CIs downstream).
 
 Every accuracy is stored as raw (k, N). elapsed_sec is recorded so the analysis stage can
-reject any mock (< 0.5 s) record. Writes exp/results/full/e2_midcontext.json plus the pilot
+reject any mock (< 0.5 s) record. Writes results/e2_midcontext.json plus the pilot
 summary artifacts and PID/PROGRESS/DONE markers.
 """
 
@@ -48,7 +48,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_3_e2_midcontext")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 PILOTS_DIR = RESULTS_DIR / "pilots"
 for d in (RESULTS_DIR, FULL_DIR, PILOTS_DIR):

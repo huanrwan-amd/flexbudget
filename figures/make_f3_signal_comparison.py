@@ -6,7 +6,7 @@ The controlled variable is the *importance signal*. Budget (fraction of dense
 KV retained), block size, sequence length, task mix, sample count and seed are
 all held fixed, and every arm runs through the same compiled eviction kernel.
 
-Every plotted value is read from exp/results/full/e4_signal_comparison.json.
+Every plotted value is read from results/e4_signal_comparison.json.
 Per-signal (k, n) are pooled across the three tasks (niah, multihop,
 summ_extract), 16 samples each -> n = 48 per bar. Wilson score 95% CIs are
 recomputed here from the raw pooled (k, n); the per-row `wilson_ci` fields in
@@ -19,7 +19,7 @@ They are recorded in the provenance JSON and flagged on the figure as an
 excluded harness artifact.
 
 Run:
-  .venv/bin/python3 writing/figures/make_f3_signal_comparison.py
+  python3 figures/make_f3_signal_comparison.py
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ plt.rcParams.update({
 # --------------------------------------------------------------------------
 # Paths
 # --------------------------------------------------------------------------
-HERE = Path(__file__).resolve().parent            # writing/figures
+HERE = Path(__file__).resolve().parent            # figures/
 ROOT = HERE.parent                            # workspace root
 SRC = ROOT / "results" / "e4_signal_comparison.json"
 OUT_PDF = HERE / "f3_signal_comparison.pdf"
@@ -156,7 +156,7 @@ def main() -> None:
     # ---- provenance --------------------------------------------------------
     provenance = {
         "figure": "f3_signal_comparison",
-        "generated_by": "writing/figures/make_f3_signal_comparison.py",
+        "generated_by": "figures/make_f3_signal_comparison.py",
         "scale": "PILOT",
         "pilot_note": (
             f"PILOT scale: {n_per_cell} samples per (signal x task x budget) cell; "

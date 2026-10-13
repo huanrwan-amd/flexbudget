@@ -23,7 +23,7 @@ Part 2 -- Sparsity path (H1b):
     DECISION: sparse/dense wall-clock < 0.85 -> Path A (enables H6 latency claims in E3);
     else Path B (memory-only). Both are publishable.
 
-Writes exp/results/full/e0_parity_gate.json + PID/PROGRESS/DONE markers.
+Writes results/e0_parity_gate.json + PID/PROGRESS/DONE markers.
 Defensive: any leg that raises is recorded, and a DONE marker is always emitted.
 """
 
@@ -38,7 +38,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_1_e0_parity_gate")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 FULL_DIR.mkdir(parents=True, exist_ok=True)

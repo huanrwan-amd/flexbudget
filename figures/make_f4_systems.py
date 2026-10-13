@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Poster figure F4 -- FlexBudget systems payoff on a single data-center GPU.
 
-Every plotted number is read from exp/results/full/e3_systems.json at runtime.
+Every plotted number is read from results/e3_systems.json at runtime.
 Nothing is hard-coded except axis furniture and honesty labels.
 
 Run:
-    <repo>/.venv/bin/python3 writing/figures/make_f4_systems.py
+    python3 figures/make_f4_systems.py
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 
 HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parent                       # workspaces/pytorch_2026_context_management
+ROOT = HERE.parent                       # repository root
 SRC = ROOT / "results" / "e3_systems.json"
 OUT_PDF = HERE / "f4_systems.pdf"
 OUT_PNG = HERE / "f4_systems.png"
@@ -212,7 +212,7 @@ def main() -> None:
             f"peak {rmf['real_peak_alloc_gb']:.2f} GB, prefill TTFT {rmf['real_prefill_ttft_ms']:.2f} ms."
         )
     foot_lines.append(
-        f"Source: exp/results/full/e3_systems.json (mode {d['mode']}, seed {d['seed']}, "
+        f"Source: results/e3_systems.json (mode {d['mode']}, seed {d['seed']}, "
         f"torch {env['torch']}, HIP {env['hip']}, cuda_available=true, "
         f"elapsed {d['elapsed_sec']:.2f} s, mock_flag=false). Every bar is provenance-tracked in "
         "f4_systems_provenance.json."
@@ -230,12 +230,14 @@ def main() -> None:
     # ------------------------------------------------------------ provenance
     prov = {
         "figure": "f4_systems",
-        "generated_by": str(HERE / "make_f4_systems.py"),
+        # repo-relative, never absolute: str(HERE / ...) embedded the author's
+        # full home-directory path into a shipped artifact.
+        "generated_by": "figures/make_f4_systems.py",
         "source_file": str(SRC.relative_to(ROOT)),
         "integrity": {
             "env.cuda_available": env["cuda_available"],
             "env.device_name": env["device_name"],
-            "device_arch_note": "MI300X == gfx942 (GRES tag gfx942 in exp/code/task_4_e3_systems_job.sh)",
+            "device_arch_note": "MI300X == gfx942 (select it with your cluster's GPU GRES tag)",
             "elapsed_sec": d["elapsed_sec"],
             "elapsed_gt_1s": d["elapsed_sec"] > 1,
             "mock_flag": d["mock_flag"],

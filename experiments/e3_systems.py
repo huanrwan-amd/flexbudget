@@ -38,7 +38,7 @@ at >=16K.
 PILOT mode: samples=4, seed=42, timeout=600s. To stay in budget on 7B we use a real
 Qwen2.5-7B forward through flex_attention for the LARGEST context that fits in the timeout
 and synthetic-QKV micro-benchmarks (7B head_dim=128, its real layer geometry) for the
-per-length TTFT/memory sweep. Everything writes exp/results/full/e3_systems.json with
+per-length TTFT/memory sweep. Everything writes results/e3_systems.json with
 PID/PROGRESS/DONE markers; every leg is defensive and a DONE marker is always emitted.
 """
 
@@ -53,7 +53,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_4_e3_systems")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 FULL_DIR.mkdir(parents=True, exist_ok=True)

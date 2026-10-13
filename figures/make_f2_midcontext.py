@@ -6,12 +6,12 @@ bucket) FAILED: position_corrective recovers the 10% edge bucket but leaves the
 30-50% middle at the floor -- at the 50% bucket it is far WORSE than the
 uncorrected working set (0.5B: 1/16 vs 11/16; 1.5B: 2/16 vs 10/16).
 
-Every plotted value is read from exp/results/full/e2_midcontext.json.
+Every plotted value is read from results/e2_midcontext.json.
 Wilson score 95% CIs are recomputed here from the raw (k, n) counts; the CI
 fields (if any) written by earlier agents are NOT trusted or used.
 
 Run:
-  .venv/bin/python3 writing/figures/make_f2_midcontext.py
+  python3 figures/make_f2_midcontext.py
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ plt.rcParams.update({
 # --------------------------------------------------------------------------
 # Paths
 # --------------------------------------------------------------------------
-HERE = Path(__file__).resolve().parent            # writing/figures
+HERE = Path(__file__).resolve().parent            # figures/
 ROOT = HERE.parent                            # workspace root
 SRC = ROOT / "results" / "e2_midcontext.json"
 OUT_PDF = HERE / "f2_midcontext.pdf"
@@ -114,7 +114,7 @@ def main() -> None:
 
     provenance = {
         "figure": "f2_midcontext",
-        "generated_by": "writing/figures/make_f2_midcontext.py",
+        "generated_by": "figures/make_f2_midcontext.py",
         "scale": "PILOT",
         "source_file": str(SRC.relative_to(ROOT)),
         "source_mode": mode,

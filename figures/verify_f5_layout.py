@@ -17,7 +17,7 @@ Eyeballing a 925x524 pt figure does not reliably catch a 1.5-unit overlap.
 This does, by measuring every text artist's rendered extent.
 
 Run:
-    .venv/bin/python3 writing/figures/verify_f5_layout.py
+    python3 figures/verify_f5_layout.py
 Exit 0 = clean. Exit 1 = at least one spill.
 """
 from __future__ import annotations

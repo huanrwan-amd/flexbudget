@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """F5 -- FlexBudget mechanism diagram (poster asset, schematic).
 
-Renders writing/figures/f5_mechanism.{pdf,png}.
+Renders figures/f5_mechanism.{pdf,png}.
 
 The admission grid drawn here is NOT hand-drawn: it is produced by calling the
-real ``exp/code/working_set_mask.py`` (ScoreVocabulary.attn_mass ->
+real ``flexbudget/working_set_mask.py`` (ScoreVocabulary.attn_mass ->
 build_block_importance) so the schematic cannot drift from the implementation.
 Geometry (block_size=128, seq_len=1024 -> 8 blocks, budget_fraction=0.25,
 n_sink_blocks=1, local_window_blocks=1) matches the E0 parity gate.
 
 Run:
-    .venv/bin/python3 writing/figures/make_f5_mechanism.py
+    python3 figures/make_f5_mechanism.py
 """
 
 from __future__ import annotations

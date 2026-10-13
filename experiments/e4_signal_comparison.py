@@ -29,8 +29,8 @@ Mechanism (faithful, same kernel path as the E0 gate):
             (mirrors the eager-capture patch proven in task_1).
 
 PILOT: samples=16 per task, seed=42, timeout 600s, Qwen2.5-0.5B + 1.5B. Records raw (k,N) per
-(signal x task x budget x model) and Wilson 95% CIs. Writes exp/results/pilots/ +
-pilot_summary.{md,json}; also drops a copy of the structured result in exp/results/full/.
+(signal x task x budget x model) and Wilson 95% CIs. Writes results/ +
+pilot_summary.{md,json}; also drops a copy of the structured result in results/.
 Defensive: every leg is wrapped; a DONE marker is always emitted.
 """
 
@@ -46,7 +46,7 @@ from datetime import datetime
 from pathlib import Path
 
 TASK_ID = os.environ.get("TASK_ID", "task_5_e4_signal_comparison")
-RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "exp/results"))
+RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "results"))
 FULL_DIR = RESULTS_DIR / "full"
 PILOT_DIR = RESULTS_DIR / "pilots"
 for d in (RESULTS_DIR, FULL_DIR, PILOT_DIR):
