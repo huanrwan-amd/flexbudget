@@ -1,0 +1,1311 @@
+{
+  "task_id": "task_5_e4_signal_comparison",
+  "mode": "PILOT",
+  "seed": 42,
+  "pilot_samples": 16,
+  "budgets": [
+    0.25,
+    0.5
+  ],
+  "block_size": 128,
+  "seq_len": 2048,
+  "signals": [
+    "recency",
+    "attn_mass",
+    "qk_affinity",
+    "combined",
+    "streamingllm",
+    "dense"
+  ],
+  "tasks": [
+    "niah",
+    "multihop",
+    "summ_extract"
+  ],
+  "started_at": "2026-08-26T15:44:33.808507",
+  "env": {
+    "torch": "2.10.0+rocm7.2.1.gitb6dec82d",
+    "hip": "7.2.53211",
+    "cuda_available": true,
+    "device_name": "AMD Instinct MI300X"
+  },
+  "rows": [
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 3,
+      "n": 16,
+      "accuracy": 0.1875,
+      "wilson_ci": [
+        0.0659,
+        0.4301
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "wilson_ci": [
+        0.6398,
+        0.965
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 5,
+      "n": 16,
+      "accuracy": 0.3125,
+      "wilson_ci": [
+        0.1416,
+        0.556
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "attn_mass",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 8,
+      "n": 16,
+      "accuracy": 0.5,
+      "wilson_ci": [
+        0.28,
+        0.72
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 10,
+      "n": 16,
+      "accuracy": 0.625,
+      "wilson_ci": [
+        0.3864,
+        0.8152
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 12,
+      "n": 16,
+      "accuracy": 0.75,
+      "wilson_ci": [
+        0.505,
+        0.8982
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 15,
+      "n": 16,
+      "accuracy": 0.9375,
+      "wilson_ci": [
+        0.7167,
+        0.9889
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 8,
+      "n": 16,
+      "accuracy": 0.5,
+      "wilson_ci": [
+        0.28,
+        0.72
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "combined",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 6,
+      "n": 16,
+      "accuracy": 0.375,
+      "wilson_ci": [
+        0.1848,
+        0.6136
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "dense",
+      "task": "multihop",
+      "budget": 1.0,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "dense",
+      "task": "niah",
+      "budget": 1.0,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "dense",
+      "task": "summ_extract",
+      "budget": 1.0,
+      "k": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "wilson_ci": [
+        0.3318,
+        0.769
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "wilson_ci": [
+        0.3318,
+        0.769
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 8,
+      "n": 16,
+      "accuracy": 0.5,
+      "wilson_ci": [
+        0.28,
+        0.72
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "qk_affinity",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "wilson_ci": [
+        0.3318,
+        0.769
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 5,
+      "n": 16,
+      "accuracy": 0.3125,
+      "wilson_ci": [
+        0.1416,
+        0.556
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "recency",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "wilson_ci": [
+        0.3318,
+        0.769
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 16,
+      "n": 16,
+      "accuracy": 1.0,
+      "wilson_ci": [
+        0.8064,
+        1.0
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 5,
+      "n": 16,
+      "accuracy": 0.3125,
+      "wilson_ci": [
+        0.1416,
+        0.556
+      ]
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "signal": "streamingllm",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 6,
+      "n": 16,
+      "accuracy": 0.375,
+      "wilson_ci": [
+        0.1848,
+        0.6136
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 1,
+      "n": 16,
+      "accuracy": 0.0625,
+      "wilson_ci": [
+        0.0111,
+        0.2833
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "attn_mass",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 2,
+      "n": 16,
+      "accuracy": 0.125,
+      "wilson_ci": [
+        0.035,
+        0.3602
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 1,
+      "n": 16,
+      "accuracy": 0.0625,
+      "wilson_ci": [
+        0.0111,
+        0.2833
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "combined",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "dense",
+      "task": "multihop",
+      "budget": 1.0,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "dense",
+      "task": "niah",
+      "budget": 1.0,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "dense",
+      "task": "summ_extract",
+      "budget": 1.0,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 1,
+      "n": 16,
+      "accuracy": 0.0625,
+      "wilson_ci": [
+        0.0111,
+        0.2833
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "qk_affinity",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "recency",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "multihop",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "multihop",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.5,
+      "k": 1,
+      "n": 16,
+      "accuracy": 0.0625,
+      "wilson_ci": [
+        0.0111,
+        0.2833
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "signal": "streamingllm",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "k": 0,
+      "n": 16,
+      "accuracy": 0.0,
+      "wilson_ci": [
+        0.0,
+        0.1936
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "Oscar zulu valley zulu mountain west",
+      "correct": false
+    },
+    {
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "dense",
+      "task": "niah",
+      "budget": 1.0,
+      "gold": "2769",
+      "answer": "The code is 2769",
+      "correct": true
+    },
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "9186",
+      "answer": "9186",
+      "correct": true
+    },
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "1.",
+      "correct": false
+    },
+    {
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "1.",
+      "correct": false
+    },
+    {
+      "signal": "attn_mass",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "a)  12)",
+      "correct": false
+    },
+    {
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "qk_affinity",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "combined",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "1.",
+      "correct": false
+    },
+    {
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "streamingllm",
+      "task": "niah",
+      "budget": 0.5,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "dense",
+      "task": "niah",
+      "budget": 1.0,
+      "gold": "2769",
+      "answer": "The secret code is 12VILLE",
+      "correct": false
+    },
+    {
+      "signal": "recency",
+      "task": "niah",
+      "budget": 0.25,
+      "gold": "9186",
+      "answer": "The secret code is 9.",
+      "correct": false
+    }
+  ],
+  "errors": {},
+  "findings": [
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "multihop",
+      "budget": 0.25,
+      "best_signal": "qk_affinity",
+      "best_acc": 1.0,
+      "worst_signal": "attn_mass",
+      "worst_acc": 0.1875,
+      "separation_pp": 81.25,
+      "ordering": [
+        "qk_affinity",
+        "recency",
+        "streamingllm",
+        "combined",
+        "attn_mass"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "multihop",
+      "budget": 0.5,
+      "best_signal": "recency",
+      "best_acc": 1.0,
+      "worst_signal": "qk_affinity",
+      "worst_acc": 0.5625,
+      "separation_pp": 43.75,
+      "ordering": [
+        "recency",
+        "streamingllm",
+        "attn_mass",
+        "combined",
+        "qk_affinity"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "niah",
+      "budget": 0.25,
+      "best_signal": "attn_mass",
+      "best_acc": 1.0,
+      "worst_signal": "streamingllm",
+      "worst_acc": 1.0,
+      "separation_pp": 0.0,
+      "ordering": [
+        "attn_mass",
+        "combined",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": true
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "niah",
+      "budget": 0.5,
+      "best_signal": "attn_mass",
+      "best_acc": 1.0,
+      "worst_signal": "combined",
+      "worst_acc": 0.9375,
+      "separation_pp": 6.25,
+      "ordering": [
+        "attn_mass",
+        "qk_affinity",
+        "recency",
+        "streamingllm",
+        "combined"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "best_signal": "combined",
+      "best_acc": 0.5,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.3125,
+      "separation_pp": 18.75,
+      "ordering": [
+        "combined",
+        "qk_affinity",
+        "attn_mass",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-0.5b",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "best_signal": "qk_affinity",
+      "best_acc": 0.5625,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.375,
+      "separation_pp": 18.75,
+      "ordering": [
+        "qk_affinity",
+        "recency",
+        "attn_mass",
+        "combined",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "multihop",
+      "budget": 0.25,
+      "best_signal": "attn_mass",
+      "best_acc": 0.0,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.0,
+      "separation_pp": 0.0,
+      "ordering": [
+        "attn_mass",
+        "combined",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": true
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "multihop",
+      "budget": 0.5,
+      "best_signal": "attn_mass",
+      "best_acc": 0.0,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.0,
+      "separation_pp": 0.0,
+      "ordering": [
+        "attn_mass",
+        "combined",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": true
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "niah",
+      "budget": 0.25,
+      "best_signal": "combined",
+      "best_acc": 0.125,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.0,
+      "separation_pp": 12.5,
+      "ordering": [
+        "combined",
+        "attn_mass",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "niah",
+      "budget": 0.5,
+      "best_signal": "combined",
+      "best_acc": 0.0625,
+      "worst_signal": "recency",
+      "worst_acc": 0.0,
+      "separation_pp": 6.25,
+      "ordering": [
+        "combined",
+        "qk_affinity",
+        "streamingllm",
+        "attn_mass",
+        "recency"
+      ],
+      "signal_agnostic_within_1pp": false
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "summ_extract",
+      "budget": 0.25,
+      "best_signal": "attn_mass",
+      "best_acc": 0.0,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.0,
+      "separation_pp": 0.0,
+      "ordering": [
+        "attn_mass",
+        "combined",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": true
+    },
+    {
+      "model": "qwen2.5-1.5b",
+      "task": "summ_extract",
+      "budget": 0.5,
+      "best_signal": "attn_mass",
+      "best_acc": 0.0,
+      "worst_signal": "streamingllm",
+      "worst_acc": 0.0,
+      "separation_pp": 0.0,
+      "ordering": [
+        "attn_mass",
+        "combined",
+        "qk_affinity",
+        "recency",
+        "streamingllm"
+      ],
+      "signal_agnostic_within_1pp": true
+    }
+  ],
+  "elapsed_sec": 252.59,
+  "finished_at": "2026-08-26T15:48:46.276876",
+  "pipeline_ok": true,
+  "verdict": "GO",
+  "h3_pilot_signal_ordering_emerges": true,
+  "h3_pilot_signal_agnostic_null": false
+}

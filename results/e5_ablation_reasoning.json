@@ -1,0 +1,182 @@
+{
+  "task_id": "task_6_e5_ablation_reasoning",
+  "mode": "PILOT",
+  "seed": 42,
+  "pilot_samples": 16,
+  "budget": 0.25,
+  "default_block_size": 128,
+  "block_sizes": [
+    64,
+    128,
+    256
+  ],
+  "seq_len": 2048,
+  "model": "qwen2.5-0.5b",
+  "started_at": "2026-07-25T23:31:50.532890",
+  "env": {
+    "torch": "2.10.0+rocm7.2.1.gitb6dec82d",
+    "hip": "7.2.53211",
+    "cuda_available": true,
+    "device_name": "AMD Instinct MI300X"
+  },
+  "ablation": [
+    {
+      "leg": "anchors_off_bs128",
+      "k": 15,
+      "n": 16,
+      "accuracy": 0.9375,
+      "wilson_ci": [
+        0.7167,
+        0.9889
+      ],
+      "mean_block_skip_rate": 0.7059
+    },
+    {
+      "leg": "anchors_on_bs128",
+      "k": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "wilson_ci": [
+        0.6398,
+        0.965
+      ],
+      "mean_block_skip_rate": 0.5962
+    },
+    {
+      "leg": "bs256",
+      "k": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "wilson_ci": [
+        0.6398,
+        0.965
+      ],
+      "mean_block_skip_rate": 0.4742
+    },
+    {
+      "leg": "bs64",
+      "k": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "wilson_ci": [
+        0.6398,
+        0.965
+      ],
+      "mean_block_skip_rate": 0.6688
+    }
+  ],
+  "reasoning": [
+    {
+      "method": "attn_mass_ws25",
+      "k": 8,
+      "n": 16,
+      "accuracy": 0.5,
+      "wilson_ci": [
+        0.28,
+        0.72
+      ]
+    },
+    {
+      "method": "dense",
+      "k": 8,
+      "n": 16,
+      "accuracy": 0.5,
+      "wilson_ci": [
+        0.28,
+        0.72
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "part": "ablation",
+      "leg": "anchors_on_bs128",
+      "gold": "2824",
+      "answer": "The code is 2824",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "anchors_off_bs128",
+      "gold": "2824",
+      "answer": "2824",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "bs64",
+      "gold": "2824",
+      "answer": "2824",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "bs256",
+      "gold": "2824",
+      "answer": "The code is 2824",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "anchors_on_bs128",
+      "gold": "4978",
+      "answer": "The code is 4978",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "anchors_off_bs128",
+      "gold": "4978",
+      "answer": "4978.",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "bs64",
+      "gold": "4978",
+      "answer": "4978.",
+      "correct": true
+    },
+    {
+      "part": "ablation",
+      "leg": "bs256",
+      "gold": "4978",
+      "answer": "The code is 4978",
+      "correct": true
+    },
+    {
+      "part": "reasoning",
+      "gold": "15",
+      "dense": "7",
+      "ws25": "7",
+      "dense_ok": false,
+      "ws_ok": false
+    },
+    {
+      "part": "reasoning",
+      "gold": "5",
+      "dense": "2",
+      "ws25": "2",
+      "dense_ok": false,
+      "ws_ok": false
+    },
+    {
+      "part": "reasoning",
+      "gold": "11",
+      "dense": "11",
+      "ws25": "11",
+      "dense_ok": true,
+      "ws_ok": true
+    }
+  ],
+  "errors": {},
+  "value_norm_concentration": 0.3211,
+  "value_norm_concentration_n": 16,
+  "elapsed_sec": 50.84,
+  "finished_at": "2026-07-25T23:32:41.254360",
+  "pipeline_ok": true,
+  "verdict": "GO",
+  "h7_reasoning_degradation_pp": 0.0,
+  "h7_reasoning_robust_null": true,
+  "anchor_effect_pp": -6.25
+}

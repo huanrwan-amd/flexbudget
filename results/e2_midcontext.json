@@ -1,0 +1,1036 @@
+{
+  "task_id": "task_3_e2_midcontext",
+  "mode": "PILOT",
+  "seed": 42,
+  "budget": 0.5,
+  "depths_pct": [
+    10,
+    30,
+    50,
+    70,
+    90
+  ],
+  "n_samples": 16,
+  "ctx_tokens": 2048,
+  "started_at": "2026-07-25T23:08:55.125484",
+  "env": {
+    "torch": "2.10.0+rocm7.2.1.gitb6dec82d",
+    "hip": "7.2.53211",
+    "cuda_available": true,
+    "device_name": "AMD Instinct MI300X"
+  },
+  "models": {
+    "qwen2.5-0.5b": {
+      "model": "qwen2.5-0.5b",
+      "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+      "budget": 0.5,
+      "ctx_tokens": 2048,
+      "block_size": 128,
+      "conditions": {
+        "dense": {
+          "per_depth": {
+            "10": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "6994",
+                  "pred": "6994.",
+                  "hit": true,
+                  "seq_len": 1884
+                },
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "6375",
+                  "pred": "6375.",
+                  "hit": true,
+                  "seq_len": 1895
+                },
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "3352",
+                  "pred": "3352.",
+                  "hit": true,
+                  "seq_len": 1893
+                }
+              ]
+            },
+            "30": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "3316",
+                  "pred": "3316.",
+                  "hit": true,
+                  "seq_len": 1885
+                },
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "4128",
+                  "pred": "4128.",
+                  "hit": true,
+                  "seq_len": 1892
+                },
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "9092",
+                  "pred": "9092.",
+                  "hit": true,
+                  "seq_len": 1903
+                }
+              ]
+            },
+            "50": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "6481",
+                  "pred": "6481.",
+                  "hit": true,
+                  "seq_len": 1894
+                },
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "6775",
+                  "pred": "6775.",
+                  "hit": true,
+                  "seq_len": 1896
+                },
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "2763",
+                  "pred": "2763.",
+                  "hit": true,
+                  "seq_len": 1897
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "1231",
+                  "pred": "1231.",
+                  "hit": true,
+                  "seq_len": 1885
+                },
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "3186",
+                  "pred": "3186.",
+                  "hit": true,
+                  "seq_len": 1894
+                },
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "2544",
+                  "pred": "2544.",
+                  "hit": true,
+                  "seq_len": 1888
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "6910",
+                  "pred": "6910.",
+                  "hit": true,
+                  "seq_len": 1883
+                },
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "9958",
+                  "pred": "9958.",
+                  "hit": true,
+                  "seq_len": 1885
+                },
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "8535",
+                  "pred": "8535.",
+                  "hit": true,
+                  "seq_len": 1897
+                }
+              ]
+            }
+          }
+        },
+        "uncorrected": {
+          "per_depth": {
+            "10": {
+              "k": 9,
+              "n": 16,
+              "accuracy": 0.5625,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "1136",
+                  "pred": "1136.Human:",
+                  "hit": true,
+                  "seq_len": 1889
+                },
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "6901",
+                  "pred": "6901.Human:",
+                  "hit": true,
+                  "seq_len": 1880
+                },
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "4869",
+                  "pred": "3128. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1891
+                }
+              ]
+            },
+            "30": {
+              "k": 1,
+              "n": 16,
+              "accuracy": 0.0625,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "1835",
+                  "pred": "9811. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1880
+                },
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "7250",
+                  "pred": "5258. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1894
+                },
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "2080",
+                  "pred": "9645. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1884
+                }
+              ]
+            },
+            "50": {
+              "k": 11,
+              "n": 16,
+              "accuracy": 0.6875,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "2906",
+                  "pred": "8888. The magic number",
+                  "hit": false,
+                  "seq_len": 1899
+                },
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "6006",
+                  "pred": "8380. The answer is",
+                  "hit": false,
+                  "seq_len": 1887
+                },
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "8814",
+                  "pred": "8814.Human:",
+                  "hit": true,
+                  "seq_len": 1899
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "1093",
+                  "pred": "1093.Human:",
+                  "hit": true,
+                  "seq_len": 1888
+                },
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "3759",
+                  "pred": "3759.Human:",
+                  "hit": true,
+                  "seq_len": 1884
+                },
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "4443",
+                  "pred": "4443.Human:",
+                  "hit": true,
+                  "seq_len": 1895
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "8047",
+                  "pred": "8047.Human:",
+                  "hit": true,
+                  "seq_len": 1885
+                },
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "4054",
+                  "pred": "4054.Human:",
+                  "hit": true,
+                  "seq_len": 1887
+                },
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "6750",
+                  "pred": "6750.Human:",
+                  "hit": true,
+                  "seq_len": 1893
+                }
+              ]
+            }
+          }
+        },
+        "position_corrective": {
+          "per_depth": {
+            "10": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "8185",
+                  "pred": "8185.Human:",
+                  "hit": true,
+                  "seq_len": 1893
+                },
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "3973",
+                  "pred": "3973.Human:",
+                  "hit": true,
+                  "seq_len": 1884
+                },
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "1179",
+                  "pred": "1179.Human:",
+                  "hit": true,
+                  "seq_len": 1894
+                }
+              ]
+            },
+            "30": {
+              "k": 1,
+              "n": 16,
+              "accuracy": 0.0625,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "7891",
+                  "pred": "8857. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1884
+                },
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "1997",
+                  "pred": "8888. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1881
+                },
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "9639",
+                  "pred": "8828. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1875
+                }
+              ]
+            },
+            "50": {
+              "k": 1,
+              "n": 16,
+              "accuracy": 0.0625,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "5117",
+                  "pred": "3472. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1880
+                },
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "4669",
+                  "pred": "8217. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1899
+                },
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "8905",
+                  "pred": "3123. Therefore, the",
+                  "hit": false,
+                  "seq_len": 1890
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "1722",
+                  "pred": "1722.Human:",
+                  "hit": true,
+                  "seq_len": 1907
+                },
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "2103",
+                  "pred": "2103.Human:",
+                  "hit": true,
+                  "seq_len": 1897
+                },
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "2976",
+                  "pred": "2976.Human:",
+                  "hit": true,
+                  "seq_len": 1880
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "7601",
+                  "pred": "7601.Human:",
+                  "hit": true,
+                  "seq_len": 1897
+                },
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "1302",
+                  "pred": "1302.Human:",
+                  "hit": true,
+                  "seq_len": 1892
+                },
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "9562",
+                  "pred": "9562.Human:",
+                  "hit": true,
+                  "seq_len": 1879
+                }
+              ]
+            }
+          }
+        }
+      },
+      "depths": [
+        10,
+        30,
+        50,
+        70,
+        90
+      ],
+      "u_shape_floor": 0.55,
+      "calib_probe_mid_acc": 0.75,
+      "h4_mid_bucket": {
+        "dense_50": 1.0,
+        "uncorrected_50": 0.6875,
+        "position_corrective_50": 0.0625,
+        "safety_not_worse_than_dense_10pp": false,
+        "recovery_corr_ge_uncorrected": false
+      },
+      "elapsed_sec": 71.51
+    },
+    "qwen2.5-1.5b": {
+      "model": "qwen2.5-1.5b",
+      "repo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "budget": 0.5,
+      "ctx_tokens": 2048,
+      "block_size": 128,
+      "conditions": {
+        "dense": {
+          "per_depth": {
+            "10": {
+              "k": 15,
+              "n": 16,
+              "accuracy": 0.9375,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "9123",
+                  "pred": "9123. \nTo find",
+                  "hit": true,
+                  "seq_len": 1898
+                },
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "9921",
+                  "pred": "9921. \n99",
+                  "hit": true,
+                  "seq_len": 1891
+                },
+                {
+                  "depth": 10,
+                  "cond": "dense",
+                  "gold": "9225",
+                  "pred": "9225. \nTo find",
+                  "hit": true,
+                  "seq_len": 1883
+                }
+              ]
+            },
+            "30": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "1681",
+                  "pred": "1681. To find this",
+                  "hit": true,
+                  "seq_len": 1889
+                },
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "3223",
+                  "pred": "3223. \n32",
+                  "hit": true,
+                  "seq_len": 1895
+                },
+                {
+                  "depth": 30,
+                  "cond": "dense",
+                  "gold": "8334",
+                  "pred": "8334. \n83",
+                  "hit": true,
+                  "seq_len": 1885
+                }
+              ]
+            },
+            "50": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "9751",
+                  "pred": "9751. \n97",
+                  "hit": true,
+                  "seq_len": 1878
+                },
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "4286",
+                  "pred": "4286. To find this",
+                  "hit": true,
+                  "seq_len": 1882
+                },
+                {
+                  "depth": 50,
+                  "cond": "dense",
+                  "gold": "1332",
+                  "pred": "1332. \nTo find",
+                  "hit": true,
+                  "seq_len": 1884
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "8377",
+                  "pred": "8377. \nTo find",
+                  "hit": true,
+                  "seq_len": 1900
+                },
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "1657",
+                  "pred": "1657. \nTo find",
+                  "hit": true,
+                  "seq_len": 1883
+                },
+                {
+                  "depth": 70,
+                  "cond": "dense",
+                  "gold": "5316",
+                  "pred": "5316. To find this",
+                  "hit": true,
+                  "seq_len": 1874
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "7213",
+                  "pred": "7213.",
+                  "hit": true,
+                  "seq_len": 1888
+                },
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "2632",
+                  "pred": "2632. To find this",
+                  "hit": true,
+                  "seq_len": 1897
+                },
+                {
+                  "depth": 90,
+                  "cond": "dense",
+                  "gold": "2432",
+                  "pred": "2432. \nTo find",
+                  "hit": true,
+                  "seq_len": 1876
+                }
+              ]
+            }
+          }
+        },
+        "uncorrected": {
+          "per_depth": {
+            "10": {
+              "k": 8,
+              "n": 16,
+              "accuracy": 0.5,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "3707",
+                  "pred": "6179. Sofia is a",
+                  "hit": false,
+                  "seq_len": 1894
+                },
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "7818",
+                  "pred": "7818. Sofia is located",
+                  "hit": true,
+                  "seq_len": 1897
+                },
+                {
+                  "depth": 10,
+                  "cond": "uncorrected",
+                  "gold": "6512",
+                  "pred": "6512. 65",
+                  "hit": true,
+                  "seq_len": 1891
+                }
+              ]
+            },
+            "30": {
+              "k": 0,
+              "n": 16,
+              "accuracy": 0.0,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "3074",
+                  "pred": "5912. 59",
+                  "hit": false,
+                  "seq_len": 1890
+                },
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "5010",
+                  "pred": "1400. 14",
+                  "hit": false,
+                  "seq_len": 1898
+                },
+                {
+                  "depth": 30,
+                  "cond": "uncorrected",
+                  "gold": "8309",
+                  "pred": "5021. Bern is a",
+                  "hit": false,
+                  "seq_len": 1889
+                }
+              ]
+            },
+            "50": {
+              "k": 10,
+              "n": 16,
+              "accuracy": 0.625,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "3104",
+                  "pred": "5000. To find the",
+                  "hit": false,
+                  "seq_len": 1891
+                },
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "2739",
+                  "pred": "2739. 27",
+                  "hit": true,
+                  "seq_len": 1892
+                },
+                {
+                  "depth": 50,
+                  "cond": "uncorrected",
+                  "gold": "1273",
+                  "pred": "1430. 14",
+                  "hit": false,
+                  "seq_len": 1905
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "1657",
+                  "pred": "1657. 16",
+                  "hit": true,
+                  "seq_len": 1888
+                },
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "8005",
+                  "pred": "8005. 80",
+                  "hit": true,
+                  "seq_len": 1883
+                },
+                {
+                  "depth": 70,
+                  "cond": "uncorrected",
+                  "gold": "2143",
+                  "pred": "2143. 21",
+                  "hit": true,
+                  "seq_len": 1884
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "7930",
+                  "pred": "7930. 79",
+                  "hit": true,
+                  "seq_len": 1887
+                },
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "1619",
+                  "pred": "1619. 16",
+                  "hit": true,
+                  "seq_len": 1906
+                },
+                {
+                  "depth": 90,
+                  "cond": "uncorrected",
+                  "gold": "9032",
+                  "pred": "9032. 90",
+                  "hit": true,
+                  "seq_len": 1894
+                }
+              ]
+            }
+          }
+        },
+        "position_corrective": {
+          "per_depth": {
+            "10": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "6685",
+                  "pred": "6685. 66",
+                  "hit": true,
+                  "seq_len": 1890
+                },
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "8292",
+                  "pred": "8292. 82",
+                  "hit": true,
+                  "seq_len": 1892
+                },
+                {
+                  "depth": 10,
+                  "cond": "position_corrective",
+                  "gold": "6030",
+                  "pred": "6030. 60",
+                  "hit": true,
+                  "seq_len": 1898
+                }
+              ]
+            },
+            "30": {
+              "k": 1,
+              "n": 16,
+              "accuracy": 0.0625,
+              "samples": [
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "8656",
+                  "pred": "4101. \n41",
+                  "hit": false,
+                  "seq_len": 1878
+                },
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "7772",
+                  "pred": "5495. 54",
+                  "hit": false,
+                  "seq_len": 1873
+                },
+                {
+                  "depth": 30,
+                  "cond": "position_corrective",
+                  "gold": "1926",
+                  "pred": "4135. 41",
+                  "hit": false,
+                  "seq_len": 1910
+                }
+              ]
+            },
+            "50": {
+              "k": 2,
+              "n": 16,
+              "accuracy": 0.125,
+              "samples": [
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "7596",
+                  "pred": "5478. 54",
+                  "hit": false,
+                  "seq_len": 1879
+                },
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "4611",
+                  "pred": "6276. 62",
+                  "hit": false,
+                  "seq_len": 1890
+                },
+                {
+                  "depth": 50,
+                  "cond": "position_corrective",
+                  "gold": "3301",
+                  "pred": "5522. 55",
+                  "hit": false,
+                  "seq_len": 1881
+                }
+              ]
+            },
+            "70": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "4825",
+                  "pred": "4825. 48",
+                  "hit": true,
+                  "seq_len": 1878
+                },
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "1886",
+                  "pred": "1886. 18",
+                  "hit": true,
+                  "seq_len": 1884
+                },
+                {
+                  "depth": 70,
+                  "cond": "position_corrective",
+                  "gold": "3304",
+                  "pred": "3304. 33",
+                  "hit": true,
+                  "seq_len": 1899
+                }
+              ]
+            },
+            "90": {
+              "k": 16,
+              "n": 16,
+              "accuracy": 1.0,
+              "samples": [
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "7398",
+                  "pred": "7398. 73",
+                  "hit": true,
+                  "seq_len": 1892
+                },
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "4501",
+                  "pred": "4501. 45",
+                  "hit": true,
+                  "seq_len": 1890
+                },
+                {
+                  "depth": 90,
+                  "cond": "position_corrective",
+                  "gold": "2295",
+                  "pred": "2295. 22",
+                  "hit": true,
+                  "seq_len": 1888
+                }
+              ]
+            }
+          }
+        }
+      },
+      "depths": [
+        10,
+        30,
+        50,
+        70,
+        90
+      ],
+      "u_shape_floor": 0.55,
+      "calib_probe_mid_acc": 1.0,
+      "h4_mid_bucket": {
+        "dense_50": 1.0,
+        "uncorrected_50": 0.625,
+        "position_corrective_50": 0.125,
+        "safety_not_worse_than_dense_10pp": false,
+        "recovery_corr_ge_uncorrected": false
+      },
+      "elapsed_sec": 82.12
+    }
+  },
+  "elapsed_sec": 158.09,
+  "finished_at": "2026-07-25T23:11:33.108628",
+  "H4_safety_pass": false,
+  "H4_recovery": false,
+  "pilot_pass": false,
+  "verdict": "REFINE"
+}

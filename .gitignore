@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+logs/
+*.egg-info/
+# generated figure artifacts -- regenerate with `make figures`
+figures/*.pdf
+figures/*.png
+figures/*_provenance.json

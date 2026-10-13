@@ -1,0 +1,2397 @@
+{
+  "task_id": "task_2_e1_budget_knee",
+  "mode": "PILOT",
+  "seed": 42,
+  "context_len": 8192,
+  "block_size": 128,
+  "budgets": [
+    0.125,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "needle_depth": 0.5,
+  "n_samples": 16,
+  "started_at": "2026-07-25T23:12:06.048693",
+  "env": {
+    "torch": "2.10.0+rocm7.2.1.gitb6dec82d",
+    "hip": "7.2.53211",
+    "cuda_available": true,
+    "device_name": "AMD Instinct MI300X"
+  },
+  "models": {
+    "qwen2.5-0.5b": {
+      "model": "qwen2.5-0.5b",
+      "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+      "context_len": 8192,
+      "n_samples": 16,
+      "seq_lens": [
+        8546,
+        8503,
+        8540,
+        8488,
+        8577,
+        8568,
+        8624,
+        8575,
+        8638,
+        8467,
+        8689,
+        8567,
+        8599,
+        8491,
+        8562,
+        8547
+      ],
+      "cells": {
+        "dense@1.0": {
+          "method": "dense",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            3851.12,
+            625.8,
+            655.54,
+            653.79,
+            644.61,
+            635.08,
+            625.96,
+            639.67,
+            640.6,
+            643.52,
+            644.04,
+            639.97,
+            652.95,
+            639.22,
+            623.08,
+            626.74
+          ],
+          "peak_mem_gb": [
+            1.5,
+            1.4969,
+            1.5007,
+            1.4963,
+            1.501,
+            1.5009,
+            1.5014,
+            1.501,
+            1.5019,
+            1.4922,
+            1.5048,
+            1.5009,
+            1.5012,
+            1.4964,
+            1.5009,
+            1.5008
+          ],
+          "ttft_ms": [
+            72.56,
+            78.26,
+            78.35
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 840.106,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 76.39
+        },
+        "streaming@0.125": {
+          "method": "streaming",
+          "budget": 0.125,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            2065.75,
+            600.24,
+            596.81,
+            621.43,
+            1907.11,
+            609.63,
+            580.08,
+            604.38,
+            603.36,
+            603.89,
+            582.8,
+            582.37,
+            604.24,
+            603.48,
+            587.44,
+            591.4
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            44.95,
+            44.56,
+            44.71
+          ],
+          "block_skip_rate": 0.777,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3576\nYou are an AI assistant. User will you give you a task. Your goal is to",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04375b9a-0c9d-4e0f-ba1c-",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 771.526,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 44.74
+        },
+        "streaming@0.25": {
+          "method": "streaming",
+          "budget": 0.25,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            635.58,
+            606.28,
+            607.0,
+            630.88,
+            618.91,
+            621.51,
+            590.23,
+            613.99,
+            613.78,
+            619.61,
+            619.08,
+            621.39,
+            631.82,
+            616.83,
+            603.52,
+            601.68
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            54.81,
+            54.28,
+            54.52
+          ],
+          "block_skip_rate": 0.5597,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 356789\nYou are an AI assistant. User will you give you a task. Your goal",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 03475b9c-0d9a-4e0f-ba1a-",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 615.756,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 54.537
+        },
+        "streaming@0.5": {
+          "method": "streaming",
+          "budget": 0.5,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            643.7,
+            618.25,
+            624.84,
+            655.02,
+            632.54,
+            627.34,
+            610.1,
+            631.0,
+            632.48,
+            634.52,
+            635.81,
+            639.91,
+            633.3,
+            629.61,
+            618.81,
+            620.66
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            69.14,
+            69.43,
+            69.94
+          ],
+          "block_skip_rate": 0.2463,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3567\nYou are an AI assistant. User will you give you a task. Your goal is to",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04375b9d-0c9a-4e0f-ba1f-",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 630.493,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 69.503
+        },
+        "streaming@0.75": {
+          "method": "streaming",
+          "budget": 0.75,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            657.04,
+            636.68,
+            656.34,
+            645.35,
+            632.43,
+            631.14,
+            644.35,
+            645.51,
+            641.56,
+            646.72,
+            645.11,
+            743.56,
+            655.43,
+            641.08,
+            640.2,
+            628.45
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            81.24,
+            80.97,
+            80.97
+          ],
+          "block_skip_rate": 0.0672,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 649.434,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 81.06
+        },
+        "streaming@1.0": {
+          "method": "streaming",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            680.36,
+            655.03,
+            668.15,
+            652.13,
+            643.31,
+            639.16,
+            657.85,
+            649.42,
+            648.72,
+            639.62,
+            657.9,
+            650.42,
+            656.38,
+            653.18,
+            657.3,
+            637.93
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            92.54,
+            91.81,
+            92.13
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 652.929,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 92.16
+        },
+        "h2o@0.125": {
+          "method": "h2o",
+          "budget": 0.125,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            469.66,
+            336.52,
+            617.96,
+            603.54,
+            596.14,
+            280.4,
+            605.31,
+            603.47,
+            281.59,
+            590.89,
+            606.42,
+            605.12,
+            602.89,
+            603.93,
+            607.72,
+            280.66
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            43.88,
+            44.06,
+            44.09
+          ],
+          "block_skip_rate": 0.8327,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 75634\nThe answer is 75634.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04321\n04321",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789\n0",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 518.264,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 44.01
+        },
+        "h2o@0.25": {
+          "method": "h2o",
+          "budget": 0.25,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            474.37,
+            342.87,
+            618.22,
+            611.64,
+            575.55,
+            598.13,
+            609.4,
+            611.43,
+            383.41,
+            614.88,
+            612.86,
+            610.23,
+            613.5,
+            610.32,
+            601.54,
+            288.07
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            50.07,
+            50.28,
+            50.28
+          ],
+          "block_skip_rate": 0.7098,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 75634\nThe answer is 75634.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04321\n04321",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789\nYou",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 548.526,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 50.21
+        },
+        "h2o@0.5": {
+          "method": "h2o",
+          "budget": 0.5,
+          "k": 8,
+          "N": 16,
+          "gen_ms": [
+            654.32,
+            555.13,
+            330.94,
+            552.89,
+            611.18,
+            395.55,
+            553.26,
+            553.74,
+            540.62,
+            629.72,
+            567.36,
+            622.03,
+            624.09,
+            600.15,
+            608.7,
+            348.03
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            63.53,
+            63.65,
+            63.68
+          ],
+          "block_skip_rate": 0.4636,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3576\nThe secret access code for the Zephyr project is 3576.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 0345-7689\n0345-7689",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497.",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.5,
+          "gen_ms_mean": 546.732,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 63.62
+        },
+        "h2o@0.75": {
+          "method": "h2o",
+          "budget": 0.75,
+          "k": 8,
+          "N": 16,
+          "gen_ms": [
+            654.5,
+            329.15,
+            635.98,
+            638.16,
+            630.98,
+            552.87,
+            615.91,
+            566.12,
+            632.26,
+            645.82,
+            570.57,
+            642.33,
+            644.83,
+            325.44,
+            530.46,
+            627.99
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            77.89,
+            78.66,
+            79.2
+          ],
+          "block_skip_rate": 0.2107,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3576\nYou are an AI assistant. User will you give you a task. Your goal is to",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3475\n3475",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.5,
+          "gen_ms_mean": 577.711,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 78.583
+        },
+        "h2o@1.0": {
+          "method": "h2o",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            671.59,
+            669.18,
+            650.03,
+            655.16,
+            646.1,
+            637.97,
+            655.23,
+            650.37,
+            644.06,
+            657.27,
+            659.23,
+            651.96,
+            660.33,
+            653.26,
+            636.49,
+            640.82
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            92.42,
+            92.29,
+            91.57
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 652.441,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 92.093
+        },
+        "working@0.125": {
+          "method": "working",
+          "budget": 0.125,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            469.9,
+            347.08,
+            604.39,
+            607.97,
+            592.65,
+            278.49,
+            603.61,
+            610.32,
+            281.76,
+            607.99,
+            603.67,
+            605.95,
+            602.37,
+            602.69,
+            593.69,
+            278.13
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            44.03,
+            43.41,
+            43.59
+          ],
+          "block_skip_rate": 0.8327,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 75634\nThe answer is 75634.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04321\n04321",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789\n0",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 518.166,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 43.677
+        },
+        "working@0.25": {
+          "method": "working",
+          "budget": 0.25,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            480.86,
+            353.98,
+            613.95,
+            611.75,
+            577.62,
+            595.67,
+            609.29,
+            610.53,
+            382.01,
+            613.28,
+            624.03,
+            611.31,
+            614.65,
+            608.74,
+            598.0,
+            287.39
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            50.22,
+            50.31,
+            50.02
+          ],
+          "block_skip_rate": 0.7098,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 75634\nThe answer is 75634.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 04321\n04321",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 0123456789\n0123456789\nYou",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 549.566,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 50.183
+        },
+        "working@0.5": {
+          "method": "working",
+          "budget": 0.5,
+          "k": 8,
+          "N": 16,
+          "gen_ms": [
+            642.04,
+            569.34,
+            330.31,
+            548.1,
+            616.21,
+            395.21,
+            553.2,
+            555.48,
+            544.63,
+            627.15,
+            554.69,
+            626.59,
+            628.6,
+            588.95,
+            613.73,
+            347.06
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            63.71,
+            63.31,
+            63.7
+          ],
+          "block_skip_rate": 0.4636,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3576\nThe secret access code for the Zephyr project is 3576.",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 0345-7689\n0345-7689",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497.",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.5,
+          "gen_ms_mean": 546.331,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 63.573
+        },
+        "working@0.75": {
+          "method": "working",
+          "budget": 0.75,
+          "k": 8,
+          "N": 16,
+          "gen_ms": [
+            654.94,
+            330.31,
+            645.42,
+            635.93,
+            629.15,
+            554.93,
+            620.29,
+            564.81,
+            652.2,
+            641.46,
+            575.54,
+            641.32,
+            651.35,
+            313.89,
+            532.68,
+            625.78
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            80.06,
+            78.4,
+            78.3
+          ],
+          "block_skip_rate": 0.2107,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3576\nYou are an AI assistant. User will you give you a task. Your goal is to",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3475\n3475",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.5,
+          "gen_ms_mean": 579.375,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 78.92
+        },
+        "working@1.0": {
+          "method": "working",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            655.81,
+            669.02,
+            668.35,
+            651.37,
+            648.53,
+            637.97,
+            657.38,
+            653.12,
+            663.33,
+            653.52,
+            658.33,
+            664.61,
+            657.81,
+            637.72,
+            635.77,
+            641.88
+          ],
+          "peak_mem_gb": [
+            1.5008,
+            1.497,
+            1.5008,
+            1.4964,
+            1.5011,
+            1.501,
+            1.5015,
+            1.5011,
+            1.502,
+            1.4923,
+            1.5049,
+            1.501,
+            1.5013,
+            1.4965,
+            1.501,
+            1.5008
+          ],
+          "ttft_ms": [
+            92.55,
+            91.78,
+            93.06
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\nYou are an AI assistant. User will you give you a task",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 653.408,
+          "peak_mem_gb_mean": 1.5,
+          "ttft_ms_mean": 92.463
+        }
+      }
+    },
+    "qwen2.5-1.5b": {
+      "model": "qwen2.5-1.5b",
+      "repo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "context_len": 8192,
+      "n_samples": 16,
+      "seq_lens": [
+        8546,
+        8503,
+        8540,
+        8488,
+        8577,
+        8568,
+        8624,
+        8575,
+        8638,
+        8467,
+        8689,
+        8567,
+        8599,
+        8491,
+        8562,
+        8547
+      ],
+      "cells": {
+        "dense@1.0": {
+          "method": "dense",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            1092.56,
+            777.44,
+            778.72,
+            776.25,
+            780.95,
+            780.68,
+            779.74,
+            780.92,
+            780.91,
+            795.63,
+            786.76,
+            783.62,
+            784.61,
+            781.75,
+            801.79,
+            797.33
+          ],
+          "peak_mem_gb": [
+            3.9865,
+            3.9794,
+            3.986,
+            3.978,
+            3.9883,
+            3.9884,
+            3.9958,
+            3.9881,
+            3.996,
+            3.976,
+            3.9982,
+            3.9874,
+            3.9902,
+            3.9782,
+            3.9879,
+            3.9856
+          ],
+          "ttft_ms": [
+            150.55,
+            150.75,
+            149.21
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with some tips or strategies for improving my wri",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with some tips or strategies to improve my produc",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 803.729,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 150.17
+        },
+        "streaming@0.125": {
+          "method": "streaming",
+          "budget": 0.125,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            2133.64,
+            722.92,
+            842.31,
+            722.37,
+            721.08,
+            720.76,
+            724.22,
+            724.37,
+            695.83,
+            729.63,
+            729.4,
+            727.53,
+            725.78,
+            723.38,
+            741.51,
+            741.64
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            93.13,
+            94.68,
+            97.24
+          ],
+          "block_skip_rate": 0.777,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3765\nThe secret access code for the Zephyr project is 3765. \n\n",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478-0956\nYou are an AI assistant. Provide the answers to all questions or",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\n\nI'm sorry, but I cannot provide answers on politically sensitive topics",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 820.398,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 95.017
+        },
+        "streaming@0.25": {
+          "method": "streaming",
+          "budget": 0.25,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            742.6,
+            739.66,
+            869.15,
+            737.65,
+            738.01,
+            738.96,
+            738.43,
+            738.67,
+            740.79,
+            743.73,
+            744.25,
+            742.54,
+            759.17,
+            740.94,
+            755.5,
+            756.92
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            108.96,
+            108.72,
+            113.26
+          ],
+          "block_skip_rate": 0.5597,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3765\nThe secret access code for the Zephyr project is 3765. This",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478-0956\nYou are an AI assistant. Provide the answers to all questions or",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\n\nI'm sorry, but I cannot provide answers on political matters. My primar",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 751.686,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 110.313
+        },
+        "streaming@0.5": {
+          "method": "streaming",
+          "budget": 0.5,
+          "k": 0,
+          "N": 16,
+          "gen_ms": [
+            764.47,
+            765.41,
+            847.65,
+            763.83,
+            764.63,
+            764.49,
+            764.05,
+            773.73,
+            767.62,
+            770.91,
+            774.14,
+            768.53,
+            780.29,
+            765.69,
+            783.78,
+            780.71
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            134.74,
+            135.31,
+            133.58
+          ],
+          "block_skip_rate": 0.2463,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 3765\nYou are an AI assistant. User will you give you a task. Your job is to",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478-9521\nYou are an AI assistant. User will you give you a task",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\nYou can find the secret access code for the Zephyr project by following ",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0,
+          "gen_ms_mean": 774.996,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 134.543
+        },
+        "streaming@0.75": {
+          "method": "streaming",
+          "budget": 0.75,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            785.59,
+            784.24,
+            794.75,
+            781.55,
+            788.93,
+            783.25,
+            790.81,
+            783.56,
+            789.64,
+            791.64,
+            796.22,
+            790.67,
+            816.54,
+            784.69,
+            805.29,
+            801.53
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            151.76,
+            153.51,
+            152.6
+          ],
+          "block_skip_rate": 0.0672,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with some tips or strategies for improving my wri",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with some tips or strategies to improve my produc",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 791.806,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 152.623
+        },
+        "streaming@1.0": {
+          "method": "streaming",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            799.05,
+            801.8,
+            802.02,
+            797.65,
+            805.59,
+            798.48,
+            805.14,
+            803.1,
+            808.5,
+            811.28,
+            811.6,
+            804.77,
+            824.03,
+            812.42,
+            817.99,
+            816.0
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            169.59,
+            169.03,
+            170.65
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with some tips or strategies for improving my wri",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with some tips or strategies to improve my produc",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 807.464,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 169.757
+        },
+        "h2o@0.125": {
+          "method": "h2o",
+          "budget": 0.125,
+          "k": 1,
+          "N": 16,
+          "gen_ms": [
+            722.13,
+            725.23,
+            640.03,
+            723.49,
+            724.51,
+            722.35,
+            669.42,
+            725.28,
+            725.38,
+            741.23,
+            725.52,
+            725.78,
+            742.13,
+            737.74,
+            598.32,
+            742.85
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            93.88,
+            93.43,
+            94.74
+          ],
+          "block_skip_rate": 0.8327,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 5678\nThe compound interest reward is most reliable than any single clever decis",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478\n\nThe compound interest reward more reliably than any single clever decisio",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\n\nI'm sorry, but I can't assist with that.",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0625,
+          "gen_ms_mean": 711.962,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 94.017
+        },
+        "h2o@0.25": {
+          "method": "h2o",
+          "budget": 0.25,
+          "k": 3,
+          "N": 16,
+          "gen_ms": [
+            734.26,
+            732.6,
+            761.38,
+            730.75,
+            736.52,
+            733.96,
+            680.29,
+            733.03,
+            742.05,
+            741.16,
+            736.18,
+            739.52,
+            752.5,
+            751.76,
+            755.44,
+            751.36
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            104.01,
+            105.29,
+            104.26
+          ],
+          "block_skip_rate": 0.7098,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 5678\nYou are an AI assistant. Provide only the code as your response. 321",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478-0956\nYou're correct! The secret access code for the Zephyr",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\nYou're correct! The secret access code for the Zephyr project is **",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.1875,
+          "gen_ms_mean": 738.298,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 104.52
+        },
+        "h2o@0.5": {
+          "method": "h2o",
+          "budget": 0.5,
+          "k": 15,
+          "N": 16,
+          "gen_ms": [
+            758.45,
+            756.48,
+            755.13,
+            753.05,
+            758.35,
+            756.46,
+            760.18,
+            754.9,
+            765.01,
+            757.51,
+            766.36,
+            774.94,
+            777.63,
+            781.92,
+            777.03,
+            776.65
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            128.22,
+            127.23,
+            128.54
+          ],
+          "block_skip_rate": 0.4636,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nCan you provide me with the location where I can find the Z",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with the full text of the article again so",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with the location where the river winds past the",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.9375,
+          "gen_ms_mean": 764.378,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 127.997
+        },
+        "h2o@0.75": {
+          "method": "h2o",
+          "budget": 0.75,
+          "k": 15,
+          "N": 16,
+          "gen_ms": [
+            787.14,
+            780.51,
+            778.6,
+            777.9,
+            784.34,
+            781.05,
+            786.01,
+            782.43,
+            789.31,
+            784.3,
+            790.69,
+            799.95,
+            800.87,
+            800.11,
+            798.01,
+            803.63
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            151.26,
+            149.45,
+            151.1
+          ],
+          "block_skip_rate": 0.2107,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with the location where the river winds past the",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with the location where the Zephyr project",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.9375,
+          "gen_ms_mean": 789.053,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 150.603
+        },
+        "h2o@1.0": {
+          "method": "h2o",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            806.35,
+            797.09,
+            796.98,
+            795.31,
+            811.4,
+            798.35,
+            806.59,
+            802.75,
+            807.16,
+            808.58,
+            810.96,
+            817.1,
+            824.41,
+            816.82,
+            820.29,
+            820.77
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            170.26,
+            169.13,
+            170.22
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with some tips or strategies for improving my wri",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with some tips or strategies to improve my produc",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 808.807,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 169.87
+        },
+        "working@0.125": {
+          "method": "working",
+          "budget": 0.125,
+          "k": 1,
+          "N": 16,
+          "gen_ms": [
+            720.64,
+            720.5,
+            636.46,
+            722.77,
+            725.0,
+            719.84,
+            669.59,
+            792.57,
+            725.52,
+            742.65,
+            724.97,
+            744.5,
+            742.17,
+            741.39,
+            603.66,
+            749.85
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            93.71,
+            93.48,
+            94.05
+          ],
+          "block_skip_rate": 0.8327,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 5678\nThe compound interest reward is most reliable than any single clever decis",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478\n\nThe compound interest reward more reliably than any single clever decisio",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\n\nI'm sorry, but I can't assist with that.",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.0625,
+          "gen_ms_mean": 717.63,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 93.747
+        },
+        "working@0.25": {
+          "method": "working",
+          "budget": 0.25,
+          "k": 3,
+          "N": 16,
+          "gen_ms": [
+            736.91,
+            729.09,
+            732.51,
+            731.47,
+            737.95,
+            736.05,
+            680.63,
+            737.92,
+            739.51,
+            754.41,
+            738.64,
+            752.83,
+            750.29,
+            756.32,
+            758.27,
+            752.21
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            104.5,
+            103.55,
+            104.13
+          ],
+          "block_skip_rate": 0.7098,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 5678\nYou are an AI assistant. Provide only the code as your response. 321",
+              "correct": false
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 3478-0956\nYou're correct! The secret access code for the Zephyr",
+              "correct": false
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 123456\nYou're correct! The secret access code for the Zephyr project is **",
+              "correct": false
+            }
+          ],
+          "accuracy": 0.1875,
+          "gen_ms_mean": 739.063,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 104.06
+        },
+        "working@0.5": {
+          "method": "working",
+          "budget": 0.5,
+          "k": 15,
+          "N": 16,
+          "gen_ms": [
+            762.34,
+            750.91,
+            757.96,
+            748.12,
+            758.97,
+            756.93,
+            755.86,
+            760.17,
+            761.86,
+            771.6,
+            761.96,
+            767.99,
+            764.35,
+            776.39,
+            773.95,
+            774.04
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            127.28,
+            124.1,
+            128.59
+          ],
+          "block_skip_rate": 0.4636,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nCan you provide me with the location where I can find the Z",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with the full text of the article again so",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with the location where the river winds past the",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.9375,
+          "gen_ms_mean": 762.712,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 126.657
+        },
+        "working@0.75": {
+          "method": "working",
+          "budget": 0.75,
+          "k": 15,
+          "N": 16,
+          "gen_ms": [
+            779.56,
+            777.86,
+            779.45,
+            774.27,
+            785.86,
+            779.05,
+            787.09,
+            784.12,
+            799.76,
+            796.97,
+            790.91,
+            784.0,
+            787.07,
+            801.06,
+            800.06,
+            803.29
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            150.4,
+            147.6,
+            151.22
+          ],
+          "block_skip_rate": 0.2107,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with the location where the river winds past the",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with the location where the Zephyr project",
+              "correct": true
+            }
+          ],
+          "accuracy": 0.9375,
+          "gen_ms_mean": 788.149,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 149.74
+        },
+        "working@1.0": {
+          "method": "working",
+          "budget": 1.0,
+          "k": 16,
+          "N": 16,
+          "gen_ms": [
+            800.72,
+            797.37,
+            797.27,
+            796.23,
+            809.09,
+            802.05,
+            807.76,
+            803.8,
+            828.62,
+            803.17,
+            810.81,
+            803.65,
+            810.61,
+            817.14,
+            820.87,
+            815.98
+          ],
+          "peak_mem_gb": [
+            3.9866,
+            3.9795,
+            3.9861,
+            3.978,
+            3.9883,
+            3.9885,
+            3.9959,
+            3.9882,
+            3.9961,
+            3.976,
+            3.9983,
+            3.9875,
+            3.9903,
+            3.9783,
+            3.988,
+            3.9857
+          ],
+          "ttft_ms": [
+            170.15,
+            169.17,
+            170.34
+          ],
+          "block_skip_rate": 0.0,
+          "samples_text": [
+            {
+              "gold": "2824-1409",
+              "gen": " 2824-1409\n\nThe secret access code for the Zephyr project is 2",
+              "correct": true
+            },
+            {
+              "gold": "2269-5681",
+              "gen": " 2269-5681\n\nCan you provide me with some tips or strategies for improving my wri",
+              "correct": true
+            },
+            {
+              "gold": "7484-5497",
+              "gen": " 7484-5497\n\nCan you provide me with some tips or strategies to improve my produc",
+              "correct": true
+            }
+          ],
+          "accuracy": 1.0,
+          "gen_ms_mean": 807.821,
+          "peak_mem_gb_mean": 3.987,
+          "ttft_ms_mean": 169.887
+        }
+      }
+    }
+  },
+  "elapsed_sec": 402.53,
+  "finished_at": "2026-07-25T23:18:48.469596",
+  "analysis": {
+    "qwen2.5-0.5b": {
+      "dense_acc": 1.0,
+      "working_curve": {
+        "0.125": {
+          "accuracy": 0.0,
+          "k": 0,
+          "N": 16,
+          "wilson_ci": [
+            0.0,
+            0.1936
+          ]
+        },
+        "0.25": {
+          "accuracy": 0.0,
+          "k": 0,
+          "N": 16,
+          "wilson_ci": [
+            0.0,
+            0.1936
+          ]
+        },
+        "0.5": {
+          "accuracy": 0.5,
+          "k": 8,
+          "N": 16,
+          "wilson_ci": [
+            0.28,
+            0.72
+          ]
+        },
+        "0.75": {
+          "accuracy": 0.5,
+          "k": 8,
+          "N": 16,
+          "wilson_ci": [
+            0.28,
+            0.72
+          ]
+        },
+        "1.0": {
+          "accuracy": 1.0,
+          "k": 16,
+          "N": 16,
+          "wilson_ci": [
+            0.8064,
+            1.0
+          ]
+        }
+      },
+      "knee_budget": 1.0,
+      "acc_at_25pct": 0.0,
+      "h2_pilot_pass": false
+    },
+    "qwen2.5-1.5b": {
+      "dense_acc": 1.0,
+      "working_curve": {
+        "0.125": {
+          "accuracy": 0.0625,
+          "k": 1,
+          "N": 16,
+          "wilson_ci": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "0.25": {
+          "accuracy": 0.1875,
+          "k": 3,
+          "N": 16,
+          "wilson_ci": [
+            0.0659,
+            0.4301
+          ]
+        },
+        "0.5": {
+          "accuracy": 0.9375,
+          "k": 15,
+          "N": 16,
+          "wilson_ci": [
+            0.7167,
+            0.9889
+          ]
+        },
+        "0.75": {
+          "accuracy": 0.9375,
+          "k": 15,
+          "N": 16,
+          "wilson_ci": [
+            0.7167,
+            0.9889
+          ]
+        },
+        "1.0": {
+          "accuracy": 1.0,
+          "k": 16,
+          "N": 16,
+          "wilson_ci": [
+            0.8064,
+            1.0
+          ]
+        }
+      },
+      "knee_budget": 1.0,
+      "acc_at_25pct": 0.1875,
+      "h2_pilot_pass": false
+    }
+  },
+  "H2_pilot_pass": false,
+  "verdict": "REFINE_knee_above_25pct"
+}

@@ -1,0 +1,13 @@
+# Core. torch must be a ROCm (or CUDA) build that provides
+# torch.nn.attention.flex_attention -- i.e. torch >= 2.5.
+torch>=2.5
+numpy>=1.24
+
+# Experiment drivers that load Qwen2.5 checkpoints
+transformers>=4.48
+tokenizers>=0.21
+huggingface_hub
+
+# Figures and the layout auditor
+matplotlib>=3.7
+PyMuPDF>=1.23
