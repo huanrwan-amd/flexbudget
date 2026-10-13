@@ -51,7 +51,9 @@ PILOT_DIR = RESULTS_DIR / "pilots"
 for d in (RESULTS_DIR, FULL_DIR, PILOT_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))          # _env_fix
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent     # working_set_mask
+                       / "flexbudget"))
 import _env_fix  # noqa: E402  (neutralize broken torchvision before transformers)
 
 SEED = 42

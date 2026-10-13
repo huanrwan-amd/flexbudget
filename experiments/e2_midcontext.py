@@ -55,7 +55,9 @@ for d in (RESULTS_DIR, FULL_DIR, PILOTS_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 # make working_set_mask importable regardless of cwd
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))          # _env_fix
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent     # working_set_mask
+                       / "flexbudget"))
 
 # Neutralize the container's broken torchvision/torchaudio BEFORE importing transformers.
 import _env_fix  # noqa: E402

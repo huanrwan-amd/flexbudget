@@ -32,13 +32,13 @@ only the signal swaps. The eviction policy becomes a controlled variable.
 Training-free. No custom kernels. Core PyTorch only.
 
 ```python
-import torch, working_set_mask as wsm
+import torch, flexbudget as fb
 from torch.nn.attention.flex_attention import flex_attention
 
-stats  = wsm.BlockStats(n_q_blocks=nq, n_kv_blocks=nk, block_size=128,
-                        attn_mass=mass, qk_affinity=aff, device=dev)
-scores = wsm.SCORERS["qk_affinity"](stats)        # <- the swappable part
-ws     = wsm.WorkingSetBlockMask.from_scores(scores, seq_len, budget_fraction=0.25)
+stats  = fb.BlockStats(n_q_blocks=nq, n_kv_blocks=nk, block_size=128,
+                       attn_mass=mass, qk_affinity=aff, device=dev)
+scores = fb.SCORERS["qk_affinity"](stats)         # <- the swappable part
+ws     = fb.WorkingSetBlockMask.from_scores(scores, seq_len, budget_fraction=0.25)
 
 out = torch.compile(flex_attention, dynamic=False)(q, k, v, block_mask=ws.block_mask)
 ```
